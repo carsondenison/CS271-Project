@@ -2,7 +2,6 @@ import json
 import numpy as np 
 
 def main():
-	#Write some shit
 	schema = "https://vega.github.io/schema/vega-lite/v3.json"
 	data = "data/cars.json"
 	marks = ["area", "bar", "circle", "line", "point", "rect", "rule", 
