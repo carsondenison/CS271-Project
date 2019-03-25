@@ -1,8 +1,9 @@
 import boto3
 
+keys = open(file='keys.txt',mode='r').read().splitlines()
 mturk = boto3.client('mturk',
-   aws_access_key_id = "AKIAI5D5VTE72BHZFIQQ",
-   aws_secret_access_key = "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",
+   aws_access_key_id = keys[0],
+   aws_secret_access_key = keys[1],
    region_name='us-east-1',
    endpoint_url = MTURK_SANDBOX
 )
