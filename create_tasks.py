@@ -20,7 +20,7 @@ for i in range(len(urls)):
 	question_xml = question[0] + urls[i] + question[1]
 
 	new_hit = mturk.create_hit(
-    	Title = 'What percentage is region 1 of region 2? (12445' + str(i) + ')',
+    	Title = 'What percentage is region 1 of region 2? (125' + str(i) + ')',
     	Description = 'Look at the graph and type a percent (0 to 100) which is the relative size of the two values',
     	Keywords = 'text, quick, labeling',
     	Reward = '0.15',
