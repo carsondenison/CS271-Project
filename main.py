@@ -19,5 +19,5 @@ def main():
 					"x": {"field": "Horsepower", "type": "quantitative"},
 					"y": {"field": "Miles_per_Gallon", "type": "quantitative"}
 				}}, outfile)
-			
+
 main()
