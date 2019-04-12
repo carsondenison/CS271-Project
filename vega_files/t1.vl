@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 300,
+  "height": 300,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"category":"A", "position":0, "value":0.1},
+        {"category":"A", "position":1, "value":0.6},
+        {"category":"A", "position":2, "value":0.9},
+        {"category":"A", "position":3, "value":0.4},
+        {"category":"B", "position":0, "value":0.7},
+        {"category":"B", "position":1, "value":0.2},
+        {"category":"B", "position":2, "value":1.1},
+        {"category":"B", "position":3, "value":0.8},
+        {"category":"C", "position":0, "value":0.6},
+        {"category":"C", "position":1, "value":0.1},
+        {"category":"C", "position":2, "value":0.2},
+        {"category":"C", "position":3, "value":0.7}
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {"data": "table", "field": "category"},
+      "range": "height",
+      "padding": 0.2
+    },
+    {
+      "name": "yscale",
+      "type": "linear",
+      "domain": {"data": "table", "field": "value"},
+      "range": "width",
+      "round": true,
+      "zero": true,
+      "nice": true,
+      "reverse": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "position"},
+      "range": {"scheme": "category20"}
+    }
+  ],
+
+  "axes": [
+    {"orient": "left", "scale": "yscale", "tickSize": 0, "labelPadding": 4, "zindex": 1},
+    {"orient": "bottom", "scale": "xscale"}
+  ],
+
+  "marks": [
+    {
+      "type": "group",
+
+      "from": {
+        "facet": {
+          "data": "table",
+          "name": "facet",
+          "groupby": "category"
+        }
+      },
+
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"}
+        }
+      },
+
+      "signals": [
+        {"name": "width", "update": "bandwidth('xscale')"}
+      ],
+
+      "scales": [
+        {
+          "name": "pos",
+          "type": "band",
+          "range": "width",
+          "domain": {"data": "facet", "field": "position"}
+        }
+      ],
+
+      "marks": [
+        {
+          "name": "bars",
+          "from": {"data": "facet"},
+          "type": "rect",
+          "encode": {
+            "enter": {
+              "x": {"scale": "pos", "field": "position"},
+              "width": {"scale": "pos", "band": 1},
+              "y": {"scale": "yscale", "field": "value"},
+              "y2": {"scale": "yscale", "value": 0},
+              "fill": {"scale": "color", "field": "position"}
+            }
+          }
+        }        
+      ]
+    }
+  ]
+}
