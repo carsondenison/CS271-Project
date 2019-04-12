@@ -8,18 +8,16 @@
     {
       "name": "table",
       "values": [
-        {"category":"A", "position":0, "value":0.1},
-        {"category":"A", "position":1, "value":0.6},
-        {"category":"A", "position":2, "value":0.9},
-        {"category":"A", "position":3, "value":0.4},
-        {"category":"B", "position":0, "value":0.7},
-        {"category":"B", "position":1, "value":0.2},
-        {"category":"B", "position":2, "value":1.1},
-        {"category":"B", "position":3, "value":0.8},
-        {"category":"C", "position":0, "value":0.6},
-        {"category":"C", "position":1, "value":0.1},
-        {"category":"C", "position":2, "value":0.2},
-        {"category":"C", "position":3, "value":0.7}
+        {"category":"A", "position":0, "value":95, "fill": 0},
+        {"category":"A", "position":1, "value":20, "fill": 1},
+        {"category":"A", "position":2, "value":45, "fill": 2},
+        {"category":"A", "position":3, "value":22},
+        {"category":"A", "position":4, "value":18},
+        {"category":"B", "position":0, "value":85},
+        {"category":"B", "position":1, "value":20},
+        {"category":"B", "position":2, "value":35},
+        {"category":"B", "position":3, "value":18},
+        {"category":"B", "position":4, "value":22}
       ]
     }
   ],
@@ -29,30 +27,29 @@
       "name": "xscale",
       "type": "band",
       "domain": {"data": "table", "field": "category"},
-      "range": "height",
+      "range": "width",
       "padding": 0.2
     },
     {
       "name": "yscale",
       "type": "linear",
-      "domain": {"data": "table", "field": "value"},
-      "range": "width",
+      "domain": [0,100],
+      "range": "height",
       "round": true,
       "zero": true,
-      "nice": true,
-      "reverse": true
+      "nice": true
     },
     {
       "name": "color",
       "type": "ordinal",
-      "domain": {"data": "table", "field": "position"},
-      "range": {"scheme": "category20"}
+      "domain": {"data": "table", "field": "fill"},
+      "range": ["white", "lightblue", "orange"]
     }
   ],
 
   "axes": [
-    {"orient": "left", "scale": "yscale", "tickSize": 0, "labelPadding": 4, "zindex": 1},
-    {"orient": "bottom", "scale": "xscale"}
+    {"orient": "left", "scale": "yscale", "tickSize": 5, "tickCount": 1, "labelPadding": 4, "zindex": 1},
+    {"orient": "bottom", "scale": "xscale", "ticks": false, "labels": false}
   ],
 
   "marks": [
@@ -97,7 +94,9 @@
               "width": {"scale": "pos", "band": 1},
               "y": {"scale": "yscale", "field": "value"},
               "y2": {"scale": "yscale", "value": 0},
-              "fill": {"scale": "color", "field": "position"}
+              "fill": {"scale": "color", "field": "fill"},
+              "stroke": {"value": "black"},
+              "strokeWidth": {"value": 1}
             }
           }
         }        
