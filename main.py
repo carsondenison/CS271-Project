@@ -23,6 +23,7 @@ def try1():
 					"y": {"field": "Miles_per_Gallon", "type": "quantitative"}
 				}}, outfile)
 
+# Iterates through color and stroke width for t1 from heer study
 def t1():
 	with open(file = template_directory + 't1_template.vl',mode='r') as template_file:
 		template = template_file.read().split('SPLIT_LOCATION')
@@ -32,6 +33,6 @@ def t1():
 					out.write(template[0] + color + template[1] + str(stroke_width) + template[2])
 
 def t2():
-	
+
 
 t1()
