@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 300,
+  "height": 300,
+  "padding": 5,
+
+SPLIT_LOCATION
+
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {"data": "table", "field": "category"},
+      "range": "width",
+      "padding": SPLIT_LOCATION
+    },
+    {
+      "name": "yscale",
+      "type": "linear",
+      "domain": [0,100],
+      "range": "height",
+      "round": true,
+      "zero": true,
+      "nice": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "fill"},
+      "range": ["white", "lightblue", "orange"]
+    }
+  ],
+
+  "axes": [
+    {"orient": "left", "scale": "yscale", "tickSize": 5, "tickCount": 1, "labelPadding": 4, "zindex": 1},
+    {"orient": "bottom", "scale": "xscale", "ticks": false, "labels": false}
+  ],
+
+  "marks": [
+    {
+      "type": "group",
+
+      "from": {
+        "facet": {
+          "data": "table",
+          "name": "facet",
+          "groupby": "category"
+        }
+      },
+
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"}
+        }
+      },
+
+      "signals": [
+        {"name": "width", "update": "bandwidth('xscale')"}
+      ],
+
+      "scales": [
+        {
+          "name": "pos",
+          "type": "band",
+          "range": "width",
+          "domain": {"data": "facet", "field": "position"}
+        }
+      ],
+
+      "marks": [
+        {
+          "name": "bars",
+          "from": {"data": "facet"},
+          "type": "rect",
+          "encode": {
+            "enter": {
+              "x": {"scale": "pos", "field": "position"},
+              "width": {"scale": "pos", "band": 1},
+              "y": {"scale": "yscale", "field": "value"},
+              "y2": {"scale": "yscale", "value": 0},
+              "fill": {"scale": "color", "field": "fill"},
+              "stroke": {"value": "SPLIT_LOCATION"},
+              "strokeWidth": {"value": SPLIT_LOCATION},
+              "opacity": {"value": SPLIT_LOCATION},
+              "strokeDash": {"value": [1, 0]},
+              "strokeJoin": {"value": "miter"},
+              "strokeMiterLimit": {"value": 0.1}
+            }
+          }
+        }        
+      ]
+    }
+  ]
+}
+
