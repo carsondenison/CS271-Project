@@ -40,8 +40,17 @@ def rect(template, prefix, data_location):
 						with open(file = vega_directory+prefix+color+'_'+str(stroke_width)+'_'+str(padding),mode='w+') as out:
 							out.write(template[0] + data + template[1] + str(padding) + template[2] + color + template[3] + str(stroke_width) + template[4])
 
+def scatter(template, prefix, data_location):
+	data = ''
+	with open(file=data_location,mode='r') as data_file:
+		data = data_file.read()
+		with open(file = template_directory + template,mode='r') as template_file:
+			template = template_file.read().split('SPLIT_LOCATION')
+			print(template[0] + data + template[1] + str(200) + template[2])
 
-rect('t1_template.vl', 't1_', './data.txt')
-rect('t2_template.vl', 't2_', './data2.txt')
-rect('t1_template.vl', 't3_', './data3.txt')
+scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
+
+#rect('t1_template.vl', 't1_', './data.txt')
+#rect('t2_template.vl', 't2_', './data2.txt')
+#rect('t1_template.vl', 't3_', './data3.txt')
 
