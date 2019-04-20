@@ -23,7 +23,6 @@ specs = []
 with open(file=xml_location, mode='r') as xml_wrapper:
 	split_xml_wrapper = xml_wrapper.read().split('LOCATION_FOR_VEGA_CODE')
 	for vega_file in os.listdir(vega_directory):
-		print(vega_file)
 		with open (file=vega_directory + vega_file, mode='r') as vega:
 			contents = vega.read()
 			specs.append(split_xml_wrapper[0] + contents + split_xml_wrapper[1])

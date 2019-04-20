@@ -28,6 +28,8 @@ def try1():
 
 # Iterates through color and stroke width for rectilinear plots from heer study. 
 # Ordinal x, quant y
+# Looks through template file and splits at SPLIT_LOCATION. Inserts different combinations
+#	of variables into the splits.
 def rect(template, prefix, data_location):
 	data = ''
 	with open(file=data_location,mode='r') as data_file:
@@ -41,17 +43,22 @@ def rect(template, prefix, data_location):
 							vega = template[0] + data + template[1] + str(padding) + template[2] + color + template[3] + str(stroke_width) + template[4]
 							out.write(vega)
 
+# Similar to rect, but does it for a simple vega-lite scatter plot
 def scatter(template, prefix, data_location):
 	data = ''
 	with open(file=data_location,mode='r') as data_file:
 		data = data_file.read()
 		with open(file = template_directory + template,mode='r') as template_file:
 			template = template_file.read().split('SPLIT_LOCATION')
-			print(template[0] + data + template[1] + str(200) + template[2])
+			for size in range (10,300,50):
+				with open(file = vega_directory+prefix+str(size)+'.vl',mode='w+') as out:
+					vega = template[0] + data + template[1] + str(size) + template[2]
+					out.write(vega)
 
-#scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
 
-rect('t1_template.vl', 't1_', './data.txt')
+scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
+
+#rect('t1_template.vl', 't1_', './data.txt')
 #rect('t2_template.vl', 't2_', './data2.txt')
 #rect('t1_template.vl', 't3_', './data3.txt')
 
