@@ -81,7 +81,7 @@ SPLIT_LOCATION
               "fill": {"scale": "color", "field": "fill"},
               "stroke": {"value": "SPLIT_LOCATION"},
               "strokeWidth": {"value": SPLIT_LOCATION},
-              "opacity": {"value": SPLIT_LOCATION},
+              "opacity": {"value": 1},
               "strokeDash": {"value": [1, 0]},
               "strokeJoin": {"value": "miter"},
               "strokeMiterLimit": {"value": 0.1}
