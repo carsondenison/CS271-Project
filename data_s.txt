@@ -1,0 +1,15 @@
+  "data":
+    {
+      "values": [
+        {"position":0, "value":95, "fill": "grey"},
+        {"position":1, "value":20, "fill": "orange"},
+        {"position":2, "value":45, "fill": "lightblue"},
+        {"position":3, "value":22, "fill": "grey"},
+        {"position":4, "value":18, "fill": "grey"},
+        {"position":5, "value":85, "fill": "grey"},
+        {"position":6, "value":20, "fill": "grey"},
+        {"position":7, "value":35, "fill": "grey"},
+        {"position":8, "value":18, "fill": "grey"},
+        {"position":9, "value":22, "fill": "grey"}
+      ]
+    },
