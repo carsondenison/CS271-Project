@@ -4,27 +4,6 @@ from init import *
 colors  = ['black', 'red', 'blue', 'green', 'orange', 'yellow', 'purple', 'white']
 paddings = [0.1 * i for i in range(5)]
 
-'''
-#test matt jiang
-def try1():
-	schema = "https://vega.github.io/schema/vega-lite/v3.json"
-	data = "data/cars.json"
-	marks = ["area", "bar", "circle", "line", "point", "rect", "rule", 
-			 "square", "text", "tick", "geoshape"]
-	for i in range(len(marks)):
-		filenum = str(i).zfill(1 + int(np.log10(len(marks))))
-		mark = marks[i]
-		with open('./out/viz' + filenum + '.json', 'w') as outfile:
-			json.dump({
-				"$schema": schema,
-				"data": {"url": data},
-				"mark": mark,
-				"encoding": {
-					"x": {"field": "Horsepower", "type": "quantitative"},
-					"y": {"field": "Miles_per_Gallon", "type": "quantitative"}
-				}}, outfile)
-'''
-
 # Iterates through color and stroke width for rectilinear plots from heer study. 
 # Ordinal x, quant y
 # Looks through template file and splits at SPLIT_LOCATION. Inserts different combinations
@@ -55,7 +34,7 @@ def scatter(template, prefix, data_file):
 					out.write(vega)
 
 
-scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
+#scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
 
 #rect('t1_template.vl', 't1_', './data.txt')
 #rect('t2_template.vl', 't2_', './data2.txt')
