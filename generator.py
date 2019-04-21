@@ -1,7 +1,6 @@
 import json
+from init import *
 
-vega_directory = './vega_files/'
-template_directory = './templates/'
 colors  = ['black', 'red', 'blue', 'green', 'orange', 'yellow', 'purple', 'white']
 paddings = [0.1 * i for i in range(5)]
 
@@ -30,10 +29,10 @@ def try1():
 # Ordinal x, quant y
 # Looks through template file and splits at SPLIT_LOCATION. Inserts different combinations
 #	of variables into the splits.
-def rect(template, prefix, data_location):
+def rect(template, prefix, data_file):
 	data = ''
-	with open(file=data_location,mode='r') as data_file:
-		data = data_file.read()
+	with open(file=data_location + data_file,mode='r') as data_json:
+		data = data_json.read()
 		with open(file = template_directory + template,mode='r') as template_file:
 			template = template_file.read().split('SPLIT_LOCATION')
 			for padding in paddings:
@@ -44,10 +43,10 @@ def rect(template, prefix, data_location):
 							out.write(vega)
 
 # Similar to rect, but does it for a simple vega-lite scatter plot
-def scatter(template, prefix, data_location):
+def scatter(template, prefix, data_file):
 	data = ''
-	with open(file=data_location,mode='r') as data_file:
-		data = data_file.read()
+	with open(file=data_location + data_file,mode='r') as data_json:
+		data = data_json.read()
 		with open(file = template_directory + template,mode='r') as template_file:
 			template = template_file.read().split('SPLIT_LOCATION')
 			for size in range (10,300,50):
@@ -61,4 +60,6 @@ scatter('scatter_template.vl', 'scatter_', 'data_s.txt')
 #rect('t1_template.vl', 't1_', './data.txt')
 #rect('t2_template.vl', 't2_', './data2.txt')
 #rect('t1_template.vl', 't3_', './data3.txt')
+#rect('t2_template.vl', 't4_', './data4.txt')
+#rect('t2_template.vl', 't5_', './data5.txt')
 
