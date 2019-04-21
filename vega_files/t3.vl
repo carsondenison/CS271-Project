@@ -10,11 +10,11 @@
       "values": [
         {"category":"A", "position":0, "value":95, "fill": 0},
         {"category":"A", "position":1, "value":20, "fill": 1},
-        {"category":"A", "position":2, "value":45, "fill": 0},
+        {"category":"A", "position":2, "value":25, "fill": 0},
         {"category":"A", "position":3, "value":22, "fill": 0},
         {"category":"A", "position":4, "value":18, "fill": 0},
         {"category":"B", "position":0, "value":85, "fill": 0},
-        {"category":"B", "position":1, "value":20, "fill": 2},
+        {"category":"B", "position":1, "value":45, "fill": 2},
         {"category":"B", "position":2, "value":35, "fill": 0},
         {"category":"B", "position":3, "value":18, "fill": 0},
         {"category":"B", "position":4, "value":22, "fill": 0}
