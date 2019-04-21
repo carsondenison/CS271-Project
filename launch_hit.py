@@ -3,10 +3,6 @@ import os
 import random
 from init import *
 
-# Remember to modify the URL below when you're publishing
-# HITs to the live marketplace.
-# Use: https://worker.mturk.com/mturk/preview?groupId=
-MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
 
 
 # Opening connection to the Mturk server
@@ -28,10 +24,10 @@ with open(file=xml_location, mode='r') as xml_wrapper:
 			specs.append(split_xml_wrapper[0] + contents + split_xml_wrapper[1])
 
 # Loop through the different HIT's and launch each one
-with open(file='hit_ids.txt', mode='w+') as hit_id_file:
+with open(file=hit_id_location, mode='w+') as hit_id_file:
 	for i in range(len(specs)):
 		new_hit = mturk.create_hit(
-	    	Title = 'AYYY WE TESTING!!! (' + str(random.randint(1, 100000000)) + str(i) + ')',
+	    	Title = 'Unique testing name (' + str(random.randint(1, 100000000)) + str(i) + ')',
 	    	Description = 'Answer our questions about visualization!',
 	    	Keywords = 'text, quick, labeling',
 	    	Reward = '0.15',

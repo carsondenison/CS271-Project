@@ -4,11 +4,10 @@ import boto3
 # Install it in your local environment with
 # pip install xmltodict
 import xmltodict
+from init import *
 
+# Open connection to Mturk
 keys = open(file='keys.txt',mode='r').read().splitlines()
-MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
-
-
 mturk = boto3.client('mturk',
 	aws_access_key_id = keys[0],
 	aws_secret_access_key = keys[1],
@@ -17,7 +16,7 @@ mturk = boto3.client('mturk',
 )
 
 # Get a list of the HIT ID's so we can loop through and get all results
-hit_id_file = 'hit_ids.txt'
+hit_id_file =  hit_id_location
 hit_ids = ''
 with open(file=hit_id_file, mode='r') as file_contents:
 	hit_ids = file_contents.read().splitlines()
