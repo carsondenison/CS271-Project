@@ -98,7 +98,7 @@
               "stroke": {"value": "black"},
               "strokeWidth": {"value": 1},
               "opacity": {"value": 1},
-              "strokeDash": {"value": [1, 0]},
+              "strokeDash": {"value": [1, 0]},  
               "strokeJoin": {"value": "miter"},
               "strokeMiterLimit": {"value": 0.1}
             }
