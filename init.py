@@ -2,3 +2,9 @@
 xml_location = './wrapper.xml'
 vega_directory = './vega_files/'
 key_location = './keys.txt'
+hit_id_location = 'hit_ids.txt'
+
+# Remember to modify the URL below when you're publishing
+# HITs to the live marketplace.
+# Use: https://worker.mturk.com/mturk/preview?groupId=
+MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
