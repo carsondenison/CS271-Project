@@ -12,7 +12,7 @@ data_location = './data/'
 colors = ['black', 'blue', 'green', 'purple', 'white']
 
 # Padding between groups of columns
-paddings = [0.0, 0.2, 0.4]
+paddings = [0.2]
 
 # Width of bar borders
 stroke_widths = [1, 2, 3, 4]
@@ -31,7 +31,7 @@ sizes = [10, 50, 100, 200, 300]
 #------------------------------------------------------------------------------
 
 scatter = True
-heer_t1 = False
+heer_t1 = True
 heer_t2 = False
 heer_t3 = False
 heer_t4 = False
