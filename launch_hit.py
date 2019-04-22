@@ -1,7 +1,7 @@
 import boto3
 import os
 import random
-from init import *
+from launch_init import *
 
 
 

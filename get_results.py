@@ -4,7 +4,7 @@ import boto3
 # Install it in your local environment with
 # pip install xmltodict
 import xmltodict
-from init import *
+from launch_init import *
 
 # Open connection to Mturk
 keys = open(file='keys.txt',mode='r').read().splitlines()
