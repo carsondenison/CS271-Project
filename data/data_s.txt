@@ -1,15 +1,14 @@
-  "data":
     {
       "values": [
-        {"position":0, "value":95, "fill": "grey"},
-        {"position":1, "value":20, "fill": "orange"},
-        {"position":2, "value":45, "fill": "lightblue"},
-        {"position":3, "value":22, "fill": "grey"},
-        {"position":4, "value":18, "fill": "grey"},
-        {"position":5, "value":85, "fill": "grey"},
-        {"position":6, "value":20, "fill": "grey"},
-        {"position":7, "value":35, "fill": "grey"},
-        {"position":8, "value":18, "fill": "grey"},
-        {"position":9, "value":22, "fill": "grey"}
+        {"x":0, "y":95, "fill": "grey"},
+        {"x":1, "y":20, "fill": "orange"},
+        {"x":2, "y":45, "fill": "lightblue"},
+        {"x":3, "y":22, "fill": "grey"},
+        {"x":4, "y":18, "fill": "grey"},
+        {"x":5, "y":85, "fill": "grey"},
+        {"x":6, "y":20, "fill": "grey"},
+        {"x":7, "y":35, "fill": "grey"},
+        {"x":8, "y":18, "fill": "grey"},
+        {"x":9, "y":22, "fill": "grey"}
       ]
-    },
+    }

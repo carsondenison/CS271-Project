@@ -1,4 +1,4 @@
-  "data": [
+[
     {
       "name": "table",
       "values": [
@@ -14,4 +14,4 @@
         {"category":"B", "position":4, "value":22, "fill": 0}
       ]
     }
-  ],
+  ]

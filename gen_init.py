@@ -3,6 +3,8 @@ vega_directory = './vega_files/'
 template_directory = './templates/'
 data_location = './data/'
 
+
+
 # Change here to filter visualizations
 
 # FOR BAR CHARTS: 
@@ -27,12 +29,34 @@ sizes = [10, 50, 100, 200, 300]
 
 
 
-# WHICH PLOTS DO WE WANT:
+# COMMANDS TO RUN:
 #------------------------------------------------------------------------------
 
-scatter = True
-heer_t1 = True
-heer_t2 = False
-heer_t3 = False
-heer_t4 = False
-heer_t5 = False
+# Each entry should look like: (idiom, file prefix, data file)
+cmds = [
+	('scatter', 'scatter_', 'data_s.txt'),
+	('grouped_bar', 't1_', './data.txt'),
+	('grouped_bar', 't2_', './data2.txt'),
+	('stacked_bar', 't3_', './data3.txt'),
+	('stacked_bar', 't4_', './data4.txt'),
+	('stacked_bar', 't5_', './data5.txt')
+	]
+
+# Lookup table from idiom to appropriate template
+strToTemplate = {
+	"scatter": "scatter_template.vl", 
+	"grouped_bar": "t1_template.vl", 
+	"stacked_bar": "t2_template.vl"
+	}
+
+
+# INTELLIGENCE:
+#------------------------------------------------------------------------------
+
+# List of intelligent filters to remove bad images from scatter plots
+flts_s = ["scatter_overlap"]
+
+# List of intelligent filters to remove bad images from rectilinear plots
+flts_r = []
+
+

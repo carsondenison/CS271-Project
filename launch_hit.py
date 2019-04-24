@@ -6,7 +6,11 @@ from launch_init import *
 
 
 # Opening connection to the Mturk server
-keys = open(file=key_location, mode='r').read().splitlines()
+keys = []
+with open(file=key_location, mode='r') as key_file:
+	keys = key_file.read().splitlines()
+
+
 mturk = boto3.client('mturk',
    aws_access_key_id = keys[0],
    aws_secret_access_key = keys[1],
