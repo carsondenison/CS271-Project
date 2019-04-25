@@ -1,8 +1,8 @@
 # Initializer values and locations for dependencies
 vega_directory = './vega_files/'
 template_directory = './templates/'
-data_location = './data/'
-
+data_directory = './data/'
+image_directory = './images/'
 
 
 # Change here to filter visualizations
@@ -52,6 +52,11 @@ strToTemplate = {
 
 # INTELLIGENCE:
 #------------------------------------------------------------------------------
+
+# What do you call your dependent and independent variables? The filter needs
+# to know so that it can extract the data and act on it
+x = "x"
+y = "y"
 
 # List of intelligent filters to remove bad images from scatter plots
 flts_s = ["scatter_overlap"]
