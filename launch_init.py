@@ -1,7 +1,6 @@
 # Initializer values and locations for dependencies
 xml_location = './wrapper.xml'
 vega_directory = './vega_files/'
-template_directory = './templates/'
 key_location = './keys.txt'
 hit_id_location = 'hit_ids.txt'
 data_location = './data/'
