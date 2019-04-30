@@ -3,6 +3,8 @@ vega_directory = './vega_files/'
 template_directory = './templates/'
 data_directory = './data/'
 image_directory = './images/'
+view_vega_template = './view_vega_template.html'
+view_vega_html = './view_vega.html'
 
 
 # Change here to filter visualizations
@@ -34,12 +36,12 @@ sizes = [10, 50, 100, 200, 300]
 
 # Each entry should look like: (idiom, file prefix, data file)
 cmds = [
-	('scatter', 'scatter_', 'data_s.txt'),
-	('grouped_bar', 't1_', './data.txt'),
-	('grouped_bar', 't2_', './data2.txt'),
-	('stacked_bar', 't3_', './data3.txt'),
-	('stacked_bar', 't4_', './data4.txt'),
-	('stacked_bar', 't5_', './data5.txt')
+	('scatter', 'scatter_', 'data_s.txt')#,
+#	('grouped_bar', 't1_', './data.txt'),
+#	('grouped_bar', 't2_', './data2.txt'),
+#	('stacked_bar', 't3_', './data3.txt'),
+#	('stacked_bar', 't4_', './data4.txt'),
+#	('stacked_bar', 't5_', './data5.txt')
 	]
 
 # Lookup table from idiom to appropriate template
