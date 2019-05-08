@@ -66,4 +66,16 @@ flts_s = ["scatter_overlap"]
 # List of intelligent filters to remove bad images from rectilinear plots
 flts_r = []
 
+# BELOW HERE IS JUST CONSTANTS FOR VISUAL CHECK
+#------------------------------------------------------------------------------
 
+container = '''
+    <div id="DIV_NAME"></div>
+    <script type="text/javascript">
+      var SPEC_NAME = VEGA_LOCATION
+    vegaEmbed(DIV_NAME, SPEC_NAME)   
+    </script>
+    '''
+
+div_stub = 'vis'
+spec_stub = 'spec'
