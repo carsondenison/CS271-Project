@@ -77,5 +77,4 @@ container = '''
     </script>
     '''
 
-div_stub = 'vis'
 spec_stub = 'spec'

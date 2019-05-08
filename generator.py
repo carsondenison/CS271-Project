@@ -15,7 +15,7 @@ with open(file=view_vega_template, mode='r') as template_wrapper:
 		i = i + 1
 		with open (file=vega_directory + vega_file, mode='r') as vega:
 			vega_str = vega.read()
-			div_name = div_stub + str(i)
+			div_name = vega_file
 			spec_name = spec_stub + str(i)
 			next_embedding = container.replace('DIV_NAME', div_name).replace('SPEC_NAME', spec_name).replace('VEGA_LOCATION', vega_str)
 			html_body = html_body + next_embedding

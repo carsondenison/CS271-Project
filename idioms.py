@@ -23,7 +23,7 @@ def scatter(template, prefix, data_file):
 	data = ''
 	with open(file=data_directory + data_file,mode='r') as data_json:
 		data = data_json.read()
-		with open(file = template_directory + template,mode='r') as template_file:
+		with open(template_directory + template,mode='r') as template_file:
 			template = template_file.read().split('SPLIT_LOCATION')
 			for size in sizes:
 				for flt in flts_s:
