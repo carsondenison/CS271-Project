@@ -9,11 +9,11 @@ $(document).ready(function(){
         
         // Join the array separated by the comma
         var selected;
-        selected = chkArray.join(' ') ;
+        selected = chkArray.join("', '") ;
         
         // Check if there are selected checkboxes
         if(selected.length > 0){
-            alert("Selected checkboxes value: " + selected);	
+            alert("Selected checkboxes value: ['" + selected + "']");	
         }else{
             alert("Please select at least one checkbox.");	
         }

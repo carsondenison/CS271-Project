@@ -71,6 +71,7 @@ flts_r = []
 
 container = '''
     <div id="DIV_NAME"></div>
+    <input type="checkbox" value="DIV_NAME" class="check">
     <script type="text/javascript">
       var SPEC_NAME = VEGA_LOCATION
     vegaEmbed(DIV_NAME, SPEC_NAME)   
