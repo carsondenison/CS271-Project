@@ -2,7 +2,9 @@ FOR THE GENERATOR:-------------------------------------------------------------
 
 THE BASICS: 
 The file "gen_init.py" contains all the things a user must change before running the generator. 
-To run the generator itself and create your vega files (and images), run "python generator.py". 
+To run the generator itself and create your vega files, run "python generator.py". 
+To view the images you generated and select the ones you want, open "view_vega.html"
+To remove the ones you don't want, copy the list from "view_vega.html" into "cleanup.py" and run that.
 To add more idioms to the generator, add more functions to "idioms.py"
 To add more filters, edit "filters.py"
 
@@ -15,6 +17,7 @@ The dependency tree looks as follows:
 generator.py is dependent on idioms.py, filters.py, and gen_init.py
 idioms.py    is dependent on filters.py, and gen_init.py
 filters.py   is dependent on gen_init.py
+cleanup.py   is dependent on gen_init.py
 gen_init.py  has no dependencies.
 
 The generator requires python's json library (installed with python) and the library "numpy".
