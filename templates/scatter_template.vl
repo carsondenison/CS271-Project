@@ -5,8 +5,8 @@
 SPLIT_LOCATION,
   "mark": "point",
   "encoding": {
-    "y": {"field": "value", "type": "quantitative"},
-    "x": {"field": "position", "type": "quantitative"},
+    "y": {"field": "y", "type": "quantitative"},
+    "x": {"field": "x", "type": "quantitative"},
     "size": {"value": SPLIT_LOCATION},
     "fill": {"field": "fill", "type": "nominal", "scale":null}
   }
