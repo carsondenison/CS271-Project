@@ -21,14 +21,14 @@ def rect(template, prefix, data_file):
 # Similar to rect, but does it for a simple vega-lite scatter plot
 def scatter(template, prefix, data_file):
 	data = ''
-	with open(file=data_directory + data_file,mode='r') as data_json:
+	with open(data_directory + data_file,mode='r') as data_json:
 		data = data_json.read()
-		with open(file = template_directory + template,mode='r') as template_file:
+		with open(template_directory + template,mode='r') as template_file:
 			template = template_file.read().split('SPLIT_LOCATION')
 			for size in sizes:
 				for flt in flts_s:
 					if strToFilter[flt](data, size): 
-						with open(file = vega_directory+prefix+str(size)+'.vl',mode='w+') as out:
+						with open(vega_directory+prefix+str(size)+'.vl',mode='w+') as out:
 							vega = template[0] + data + template[1] + str(size) + template[2]
 							out.write(vega)
 
