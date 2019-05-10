@@ -22,7 +22,7 @@ dtype = 1
 #------------------------------------------------------------------------------
 
 # Colors for borders, fills are set by data. See vega docs for full set
-if dtype = 1: 
+if dtype == 1: 
     colors = ['black']
 else:
     colors = ['black', 'blue', 'green', 'purple', 'white']
@@ -31,7 +31,7 @@ else:
 paddings = [0.2]
 
 # Width of bar borders
-if dtype = 2: 
+if dtype == 2: 
     stroke_widths = [2]
 else:
     stroke_widths = [1, 2, 3, 4]
