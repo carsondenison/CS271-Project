@@ -1,12 +1,12 @@
 import os
+import sys
 from gen_init import *
 
-# Put the list of visualizations to keep in here, copied from view_vega.html:
-save_list = ['scatter_50', 'scatter_200']
 
-if not save_list:
+if len(sys.argv) < 2:
 	print("If you want to remove all your files, use the command line instead")
 else:
+	save_list = sys.argv[1]
 	print("Removing files:")
 	for vega_file in os.listdir(vega_directory):
 		if vega_file.split('.')[0] not in save_list:
