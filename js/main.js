@@ -13,7 +13,7 @@ $(document).ready(function(){
         
         // Check if there are selected checkboxes
         if(selected.length > 0){
-            alert("Enter this as argument for cleanup.py: ['" + selected + "']");	
+            alert("Enter this as argument to cleanup.py: ['" + selected + "']");	
         }else{
             alert("Please select at least one checkbox.");	
         }
