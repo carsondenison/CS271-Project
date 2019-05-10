@@ -69,7 +69,6 @@ flts_r = []
 # BELOW HERE IS JUST CONSTANTS FOR VISUAL CHECK
 #------------------------------------------------------------------------------
 
-#probably this is the problem?
 container = '''
     <div id="DIV_NAME"></div>
     <input type="checkbox" value="DIV_NAME" class="check">
